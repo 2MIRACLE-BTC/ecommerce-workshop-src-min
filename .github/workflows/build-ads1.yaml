@@ -55,16 +55,16 @@ jobs:
       - name: Checkout kustomize repository
         uses: actions/checkout@v2
         with:
-          repository:  2MIRACLE-BTC/ecommerce-workshop-k8s-manifest
+          repository:  2MIRACLE-BTC/ecommerce-workshop-k8s-manifest-min
           ref: main
           token: ${{ secrets.ACTION_TOKEN }}
-          path: ecommerce-workshop-k8s-manifest
+          path: ecommerce-workshop-k8s-manifest-min
       - name: Update Kubernetes resources
         run: |
           echo ${{ steps.login-ecr.outputs.registry }}
           echo ${{ steps.image-info.outputs.ecr_repository }}
           echo ${{ steps.image-info.outputs.image_tag }}
-          cd ecommerce-workshop-k8s-manifest/overlays/dev/
+          cd ecommerce-workshop-k8s-manifest-min/overlays/dev/
           kustomize edit set image ${{ steps.login-ecr.outputs.registry}}/${{ steps.image-info.outputs.ecr_repository }}=${{ steps.login-ecr.outputs.registry}}/${{ steps.image-info.outputs.ecr_repository }}:${{ steps.image-info.outputs.image_tag }}
           cat kustomization.yaml
 
