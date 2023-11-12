@@ -70,7 +70,7 @@ jobs:
 
       - name: Commit files
         run: |
-          cd ecommerce-workshop-k8s-manifest
+          cd ecommerce-workshop-k8s-manifest-min
           git config --global user.email "github-actions@github.com"
           git config --global user.name "github-actions"
           git commit -am "Update image tag"
