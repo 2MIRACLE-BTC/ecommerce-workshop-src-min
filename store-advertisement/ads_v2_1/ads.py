@@ -72,4 +72,3 @@ def status():
         err = jsonify({'error': 'Invalid request method'})
         err.status_code = 405
         return err
-#
