@@ -26,4 +26,4 @@ class Advertisement(db.Model):
         }
 
 
-    
+  #  
