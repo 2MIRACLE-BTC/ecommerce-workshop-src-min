@@ -60,5 +60,5 @@ class Discount(db.Model):
             'discount_type': self.discount_type.serialize()
         }
 
-
+#
     
